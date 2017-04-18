@@ -1,0 +1,54 @@
+{
+  "banner": "WiFi Scanner",
+  "services": {
+    "start": {
+      "mongodb": {
+        "description": "Starting MongoDB...",
+        "cmd": "mongod --dbpath /opt/jetty/mongo-data/ &"
+      },
+      "jetty": {
+        "description": "Starting Jetty...",
+        "cmd": "su - jetty /opt/jetty/bin/jetty.sh start"
+      },
+      "wifiscanner": {
+        "description": "Starting WiFi Scan...",
+        "cmd": "...."
+      }
+    },
+    "stop": {
+      "jetty": {
+        "description": "Stopping MongoDB...",
+        "cmd": "kill $(pgrep mongod)"
+      },
+      "mongodb": {
+        "description": "Stopping Jetty....",
+        "cmd": "su - jetty /opt/jetty/bin/jetty.sh stop"
+      },
+      "wifiscanner": {
+        "description": "Stopping WiFi Scan...",
+        "cmd": "...."
+      }
+    },
+    "restart": {
+      "jetty": {
+        "description": "Restarting MongoDB...",
+        "cmd": ""
+      },
+      "mongodb": {
+        "description": "Restarting Jetty...",
+        "cmd": ""
+      },
+      "wifiscanner": {
+        "description": "Restarting WiFi Scan...",
+        "cmd": "...."
+      }
+    }
+  },
+  "config": {
+    "mongodb": {
+      "hostname": "192.168.1.101",
+      "port": 28017,
+      "database": "wifi"
+    }
+  }
+}
